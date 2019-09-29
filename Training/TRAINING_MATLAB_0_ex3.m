@@ -9,9 +9,8 @@ clc;
 %EXERCISE 3:  MATRIX AND VECTORS
 
 % 1. Asking the user about matrix's dimensions
-
-ask_dim = 'Please, introduce the first matrix`s dimension as [rows columns] \n' ;
-dim = input(ask_dim);
+in = input('Enter matrix dimensions (format: [number number]):\n')
+dim = rand(in)
 
 if size(dim)==1
     tamA = [dim dim]
@@ -19,23 +18,24 @@ else
     tamA = dim    
 end
 
-
-ask_dim = 'Please, introduce the second matrix`s dimension as [rows columns] \n' ;
-dim = input(ask_dim);
-
+in = input('Enter matrix dimensions (format: [number number]):\n')
+dim = rand(in)
 if size(dim)==1
     tamB = [dim dim]
 else
     tamB = dim    
 end
 
+% 2. Generate the matrix A y B. In order to fill them, write a function
+% in another file --> IntroduceMatrix.m
+
+% 3. Type of fill for function --> IntroduceMatrix.m
+
 
 % 4. Calculate and display:
 % Display A and B 
 A = IntroduceMatrix(tamA)
 B = IntroduceMatrix(tamB)
-
-
 
 disp("-------------------------------------------------------------------")
 disp("-------------------------- R E S U L T S --------------------------")
