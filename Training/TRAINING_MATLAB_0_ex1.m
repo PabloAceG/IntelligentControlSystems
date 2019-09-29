@@ -15,7 +15,7 @@ A = [1  2
     7   8
     ];
 % v can be define as the same way as A or:
-v_h=[14:2:20]; 
+v_h = [14 : 2 : 20]; 
 v = v_h';
 
 % 2. Obtain and display B as a concatenation of A and v 
@@ -34,34 +34,3 @@ vrow = vrow (:).' % It is obtained the transpose of the concatenation of
 % of the columns of B
 
 vcol = B (:) 
-
-%EXERCISE 2: MATRICES AND VECTORS.
-
-% 1. Create a script which generates a square matrix and and with random
-%    values, with size specified by the user. Command line must write:
-%    "Write the size of the matrix".
-
-size = input ('Write the size of the matrix: ')
-
-M = rand(size, size);
-
-% 2. From the matrix that has just been built, compute and print:
-% a. Matrix generated.
-
-M
-
-% b. A second matrix formed by the odd columns from the original matrix.
-
-oddM = M (:, 1:2:end)
-
-% c. The value of the elements in the diagonal from the generated matrix.
-
-diagM = diag(oddM)
-
-% d. Maximum, minimum, avarage and variance values of each row.
-%    All those values must be represented withing a graph, indicating the
-%    row number in the abscissa axis (x-axis).
-
-
-
-
