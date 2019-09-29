@@ -6,7 +6,7 @@ close all;
 clc;
 %-------------------------------------------------------------------------%
 
-%EXERCISE 3:  MATRIX AND VECTORS
+% EXERCISE 3:  MATRIX AND VECTORS
 
 % 1. Asking the user about matrix's dimensions
 in = input('Enter matrix dimensions (format: [number number]):\n')

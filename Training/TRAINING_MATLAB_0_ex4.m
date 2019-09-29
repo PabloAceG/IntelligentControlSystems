@@ -8,13 +8,15 @@ close all;
 clc;
 %-------------------------------------------------------------------------%
 
-% Storage for the computations time.
-%{  rang_time_1  det_time_1
+% EXERCISE 4: STORAGE FOR THE COMPUTATIONAL TIME.
+
+%{ Matrix with times format:
+... rang_time_1  det_time_1
 ... rang_time_2  det_time_2
 ...
 ... rang_time_25 det_time_25
 %}
-times = [];
+times = zeros(25, 2);
 
 % Computes the range and determinant for matrices from 1x1 to 25x25.
 for i = 1 : 25
@@ -31,8 +33,7 @@ for i = 1 : 25
    t_det = toc;
    
    % Time for the specific matrix is added to the vector with the times.
-   times = [times;
-            t_ran, t_det];
+   times(i, :) = [t_ran, t_det];
 end
 
 % Graph is generated with the times
