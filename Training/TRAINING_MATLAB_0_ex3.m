@@ -30,20 +30,21 @@ else
 end
 
 
+% 4. Calculate and display:
+% Display A and B 
 A = IntroduceMatrix(tamA)
-%A = result
-%A = IntroducirMatriz(tam) 
-
 B = IntroduceMatrix(tamB)
-%B = result
+
+
 
 disp("-------------------------------------------------------------------")
 disp("-------------------------- R E S U L T S --------------------------")
 disp("-------------------------------------------------------------------")
 
-% There are two diffentes forms to obtain the transpose of any matrix: 
-transpose_A = A.'
-transpose_B = transpose(B)
+% transpose, inverse and determinate
+    % There are two diffentes forms to obtain the transpose of any matrix: 
+    transpose_A = A.'
+    transpose_B = transpose(B)
 
 % Also, we can obtain the inverse using the function inv or raisign -1
 disp( 'INVERSE AND DETERMINATE RESULTS: ')
@@ -69,37 +70,19 @@ else
     disp('Matrix B must be square')
 end
 
-
+%Range of matrices
 disp('RANGE RESULTS: ')
 range_A = rank(A)
 range_B = rank(B)
 
-
-disp('ROW VECTOR RESULT: ')
-if tamA(1)==tamB(2)
-    row_vector = [A(1,:) B(1,:)]
-else
-    disp('Rows of matrix being concatenated are not iqual')
-end
-
-disp('COLUMN VECTOR RESULT: ')
-if tamA(2)==tamB(2)
-    col_vector = [A(:,1)  B(:,1)]
-else
-    disp('Columns of matrix being concatenated are not iqual')
-end
-
-
+% Multiplications (matrix and element)
 disp('MULTIPLICATION RESULTS:')
 %------------------------------------------------------------------------
 
 if tamA(1) == tamB(2)
-    
-    mult_mat = A*B     %Another way: mtimes(A,B)
-    
+    mult_mat = A*B     %Another way: mtimes(A,B)   
 else
     disp('Columns of matrix A must be equals to rows of Matrix B')
-    
 end
 
 %-------------------------------------------------------------------------
@@ -110,6 +93,24 @@ if (tamA(1)==tamB(1)) && (tamA(2) == tamB(2))
 else
     disp('Matrix dimensions must agree')
 end
+
+
+%Row vector with the first row of each matrix
+disp('ROW VECTOR RESULT: ')
+if tamA(1)==tamB(2)
+    row_vector = [A(1,:) B(1,:)]
+else
+    disp('Rows of matrix being concatenated are not iqual')
+end
+
+%Column vector with the first column of each matrix
+disp('COLUMN VECTOR RESULT: ')
+if tamA(2)==tamB(2)
+    col_vector = [A(:,1)  B(:,1)]
+else
+    disp('Columns of matrix being concatenated are not iqual')
+end
+
 
 
 
