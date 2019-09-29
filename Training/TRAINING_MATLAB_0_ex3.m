@@ -20,7 +20,7 @@ end
 
 in = input('Enter matrix dimensions (format: [number number]):\n')
 dim = rand(in)
-if size(dim)==1
+if size(dim)==1 %Size return the number of elemnts of the vector dim
     tamB = [dim dim]
 else
     tamB = dim    
@@ -77,7 +77,7 @@ range_B = rank(B)
 
 % Multiplications (matrix and element)
 disp('MULTIPLICATION RESULTS:')
-%------------------------------------------------------------------------
+%--------------------------------------------------------------------------
 
 if tamA(1) == tamB(2)
     mult_mat = A*B     %Another way: mtimes(A,B)   
@@ -85,7 +85,7 @@ else
     disp('Columns of matrix A must be equals to rows of Matrix B')
 end
 
-%-------------------------------------------------------------------------
+%--------------------------------------------------------------------------
 
 
 if (tamA(1)==tamB(1)) && (tamA(2) == tamB(2))
@@ -94,11 +94,12 @@ else
     disp('Matrix dimensions must agree')
 end
 
+%--------------------------------------------------------------------------
 
 %Row vector with the first row of each matrix
 disp('ROW VECTOR RESULT: ')
 if tamA(1)==tamB(2)
-    row_vector = [A(1,:) B(1,:)]
+    row_vector = [A(1,:) B(1,:)] % Concatenate first row of each matrix
 else
     disp('Rows of matrix being concatenated are not iqual')
 end
@@ -106,7 +107,7 @@ end
 %Column vector with the first column of each matrix
 disp('COLUMN VECTOR RESULT: ')
 if tamA(2)==tamB(2)
-    col_vector = [A(:,1)  B(:,1)]
+    col_vector = [A(:,1)  B(:,1)] % Concatenate first column of each matrix
 else
     disp('Columns of matrix being concatenated are not iqual')
 end

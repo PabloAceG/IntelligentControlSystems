@@ -24,9 +24,12 @@ Z =   Y .* sin(pi .* X ./ 10)      ...
     + 5 .* cos((X.^2 + Y.^2) ./ 8) ...
     +      cos(X + Y) .* cos(3 .* X - Y);
 
-% Surface graph
+% 1. Drawing in the same graphic:
+    % Surface graph at middle top
 subplot(2, 2, [1, 2]);
 surf(X, Y, Z)
+
+% 2. Add:
 % --- Title
 title('Surface')
 % --- Axis
@@ -34,9 +37,11 @@ xlabel('X')
 ylabel('Y')
 zlabel('Z')
 
-% Mesh graph
+% 1. Drawing in the same graphic:
+    % Mesh graph at left button
 subplot(2, 2, 3);
 mesh(X, Y, Z)
+% 2. Add:
 % --- Title
 title('Mesh')
 % --- Axis
@@ -44,9 +49,11 @@ xlabel('X')
 ylabel('Y')
 zlabel('Z')
 
-% Contour graph
+% 1. Drawing in the same graphic:
+    % Contour graph at rigth button
 subplot(2, 2, 4);
 contourf(X, Y, Z)
+% 2. Add:
 % --- Title
 title('Contour')
 % --- Axis
