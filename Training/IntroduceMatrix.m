@@ -4,7 +4,7 @@
 function matrix = IntroduceMatrix(Dimensions)
     
  %3. The fuction ask the user about data, it can be fill in a random way
- % if the user introduces 'r' as a parameter
+ %   if the user introduces 'r' as a parameter
     % Type of matrix fill-in
     in = input(['Write the letter r if you want to fill in the matrix '...
                 'with random numbers.\n'], 's');
