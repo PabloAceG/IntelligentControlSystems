@@ -8,13 +8,12 @@ clc;
 
 %EXERCISE 2: MATRICES AND VECTORS.
 
-% 1. Create a script which generates a square matrix and and with random
-%    values, with size specified by the user. Command line must write:
-%    "Write the size of the matrix".
+% 1. Create a script which generates a square matrix and fills it in with 
+%    random values, with size specified by the user. Command line must 
+%    write: "Write the size of the matrix".
 
-size = input ('Write the size of the matrix: ')
+size = input ('Write the size of the matrix: ');
 
-%M = randi([-50,50], size);
 M = rand(size, size);
 
 % 2. From the matrix that has just been built, compute and print:
@@ -24,7 +23,7 @@ M
 
 % b. A second matrix formed by the odd columns from the original matrix.
 
-oddM = M (:, 1:2:end)
+oddM = M (:, 1 : 2 : end)
 
 % c. The value of the elements in the diagonal from the generated matrix.
 
@@ -39,9 +38,9 @@ minimum  = min (M)
 average  = mean(M)
 variance = var (M)
  
-%stem plots the data secuence
-%hold on retains plots in the current axes
-%hold off resets axes
+% stem plots the data secuence
+% hold on retains plots in the current axes
+% hold off resets axes
 stem(maximum)
 hold on 
 stem(minimum)
@@ -52,8 +51,13 @@ stem(variance)
 hold off
 
 %Adding a title, a legend and a label to the graphic
+% --- Title
 title ('Max, min, average and variance for each matrix´s row')
-xlabel('rows')
+% --- Legend
 legend('max', 'min', 'average', 'variance')
+% --- Label
+xlabel('Rows')
+ylabel('Values')
+
 
 
