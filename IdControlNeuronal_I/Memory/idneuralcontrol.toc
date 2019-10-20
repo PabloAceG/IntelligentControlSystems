@@ -1,0 +1,2 @@
+\contentsline {section}{\numberline {1}Ejercicio 1. Perceptron}{4}{section.1}% 
+\contentsline {section}{\numberline {2}Ejercicio 2. Aproximaci\IeC {\'o}n de funciones}{4}{section.2}% 

@@ -41,12 +41,14 @@ view(net);
 % Goes through input vector just once
 % net.trainParam.epochs = 1
 % Network training
-[net, a, e pf] = adapt(net, X, Y);
+net = adapt(net, X, Y);
 % New weights after applying all input vector
 w = net.iw{1, 1}; % w = [-1.1 3.8]
 % Simulation on inputs with trained network
 a = net(X);
-error = cell2mat(a) - cell2mat(Y)
+err = cell2mat(a) - cell2mat(Y)
 % Network data at the end of execution
 net
+
+
 
