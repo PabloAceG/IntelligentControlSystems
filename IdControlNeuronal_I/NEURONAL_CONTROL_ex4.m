@@ -10,7 +10,7 @@ clc;
 
 % EXERCISE 4: CLASIFICATION
 % Load available example data in toolbox 
-[inputs, targets] = simpleclass_dataset;
+[inputs, targets] = cancer_dataset;
 
 % Creating network
 hiddenLayerSize = 10;
@@ -18,16 +18,16 @@ net = fitnet(hiddenLayerSize);
 
 % Data division for trainig, vaidation and test sets
 net.divideParam.trainRatio = 70/100;
-net.divideParam.valRatio = 15/100;
-net.divideParam.testRatio = 15/100;
+net.divideParam.valRatio   = 15/100;
+net.divideParam.testRatio  = 15/100;
 
 % Training network
-[net,tr] = train(net,inputs,targets);
+[net,tr] = train(net, inputs, targets);
 
 % Test
 outputs = net(inputs);
-errors = gsubtract(outputs,targets);
-performance = perform(net,targets,outputs)
+errors = gsubtract(outputs, targets);
+performance = perform(net, targets, outputs)
 
 % Visualise the network
 view(net)
