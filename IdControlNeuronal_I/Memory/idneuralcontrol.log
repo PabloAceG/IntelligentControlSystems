@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.16)  20 OCT 2019 12:36
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.6960 64-bit) (preloaded format=pdflatex 2019.2.16)  21 OCT 2019 00:25
 entering extended mode
 **./idneuralcontrol.tex
 (idneuralcontrol.tex
@@ -221,20 +221,20 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 (idneuralcontrol.aux)
 \openout1 = `idneuralcontrol.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 48.
+LaTeX Font Info:    ... okay on input line 48.
  ("D:\MiKTeX\MiKTeX 2.9\tex/context/base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count119
@@ -265,7 +265,7 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
 \AtBeginShipoutBox=\box33
-Package hyperref Info: Link coloring OFF on input line 21.
+Package hyperref Info: Link coloring OFF on input line 48.
 
 ("D:\MiKTeX\MiKTeX 2.9\tex/latex/hyperref\nameref.sty"
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
@@ -275,67 +275,108 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count125
 )
-LaTeX Info: Redefining \ref on input line 21.
-LaTeX Info: Redefining \pageref on input line 21.
-LaTeX Info: Redefining \nameref on input line 21.
+LaTeX Info: Redefining \ref on input line 48.
+LaTeX Info: Redefining \pageref on input line 48.
+LaTeX Info: Redefining \nameref on input line 48.
 
 (idneuralcontrol.out) (idneuralcontrol.out)
 \@outlinefile=\write3
 \openout3 = `idneuralcontrol.out'.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 25.
+(Font)              <12> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 25.
+(Font)              <8> on input line 52.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 25.
- [1
+(Font)              <6> on input line 52.
+
+! Undefined control sequence.
+<recently read> \And 
+                     
+l.52 
+     
+? 
+[1
 
 {C:/Users/Pablo/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
-No file idneuralcontrol.toc.
+(idneuralcontrol.toc)
 \tf@toc=\write4
 \openout4 = `idneuralcontrol.toc'.
 
-[3]
-<../I_ex2/training_functions.jpg, id=29, 702.625pt x 526.96875pt>
+ [3]
+<../images/I_ex1_basicData.jpg, id=22, 702.625pt x 526.96875pt>
+File: ../images/I_ex1_basicData.jpg Graphic file (type jpg)
+<use ../images/I_ex1_basicData.jpg>
+Package pdftex.def Info: ../images/I_ex1_basicData.jpg  used on input line 77.
+(pdftex.def)             Requested size: 139.7231pt x 104.7888pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 79.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 79.
+<../images/I_ex1_extendedData.jpg, id=23, 702.625pt x 526.96875pt>
+File: ../images/I_ex1_extendedData.jpg Graphic file (type jpg)
+<use ../images/I_ex1_extendedData.jpg>
+Package pdftex.def Info: ../images/I_ex1_extendedData.jpg  used on input line 8
+1.
+(pdftex.def)             Requested size: 139.7231pt x 104.7888pt.
+<../I_ex2/training_functions.jpg, id=24, 702.625pt x 526.96875pt>
 File: ../I_ex2/training_functions.jpg Graphic file (type jpg)
 <use ../I_ex2/training_functions.jpg>
-Package pdftex.def Info: ../I_ex2/training_functions.jpg  used on input line 60
-.
+Package pdftex.def Info: ../I_ex2/training_functions.jpg  used on input line 10
+4.
 (pdftex.def)             Requested size: 276.00105pt x 207.00455pt.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 71.
- [4 <../I_ex2/training_functions.jpg>]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 71.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Hyper reference `tf' on page 4 undefined on input line 110.
+
+
+LaTeX Warning: Reference `tf' on page 4 undefined on input line 110.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 115.
+[4 <../images/I_ex1_basicData.jpg> <../images/I_ex1_extendedData.jpg>] [5 <../I
+_ex2/training_functions.jpg>]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 115.
  (idneuralcontrol.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 71.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 71.
-Package rerunfilecheck Info: File `idneuralcontrol.out' has not changed.
-(rerunfilecheck)             Checksum: C777AA9C091A5F2943406A6EDB2EB692;136.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 115.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 115.
+
+
+Package rerunfilecheck Warning: File `idneuralcontrol.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `idneuralcontrol.out':
+(rerunfilecheck)             Before: D41D8CD98F00B204E9800998ECF8427E;0
+(rerunfilecheck)             After:  C777AA9C091A5F2943406A6EDB2EB692;136.
+
+LaTeX Warning: There were undefined references.
 
 
 LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 71.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 115.
  ) 
 Here is how much of TeX's memory you used:
- 6883 strings out of 492946
- 104253 string characters out of 3138614
- 200176 words of memory out of 3000000
- 10737 multiletter control sequences out of 15000+200000
- 8294 words of font info for 29 fonts, out of 3000000 for 9000
+ 6909 strings out of 492946
+ 104875 string characters out of 3138614
+ 201377 words of memory out of 3000000
+ 10755 multiletter control sequences out of 15000+200000
+ 8762 words of font info for 31 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,7n,40p,273b,319s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{figure.caption.1} has been referenced but does no
-t exist, replaced by a fixed one
-
-<D:/MiKTeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MiKTeX/MiKT
-eX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/MiKTeX 2.9/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmr12.pfb><D:/MiKTeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb
-><D:/MiKTeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on idneuralcontrol.pdf (4 pages, 113837 bytes).
+ 42i,7n,40p,273b,461s stack positions out of 5000i,500n,10000p,200000b,50000s
+<D:/MiKTeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx10.pfb><D:/MiKTeX/Mi
+KTeX 2.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/MiKTeX/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr10.pfb><D:/MiKTeX/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmr12.pfb><D:/MiKTeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.p
+fb><D:/MiKTeX/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr9.pfb><D:/MiKTeX/MiK
+TeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><D:/MiKTeX/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmtt12.pfb>
+Output written on idneuralcontrol.pdf (5 pages, 177752 bytes).
 PDF statistics:
- 64 PDF objects out of 1000 (max. 8388607)
- 10 named destinations out of 1000 (max. 500000)
- 22 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 69 PDF objects out of 1000 (max. 8388607)
+ 11 named destinations out of 1000 (max. 500000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

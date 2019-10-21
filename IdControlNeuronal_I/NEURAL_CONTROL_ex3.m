@@ -15,19 +15,32 @@ clc;
 
 % Creating network
 hiddenLayerSize = 10;
-net = fitnet(hiddenLayerSize);
+% Training functions
+% 'trainlm'  - Levenberg-Marquardt
+% 'trainbr'  - Bayesan Regularization                       x
+% 'trainbfg' - BFGSS Quasi-Newton
+% 'trainrp'  - Resilient Backpropagation                    x
+% 'trainscg' - Scaled Conjugate Gradient
+% 'traincgb' - Conjugate Gradient with Poell/Beale Restats  
+% 'traincgf' - Fletcher-Powell Conjugate Gradient
+% 'traincgp' - Polak-Ribiére Conjugate Gradient
+% 'trainoss' - One Step Secant                              x
+% 'traingdx' - Variable Learning Rate Gradient Descent
+% 'traingdm' - Gradient Descent with Momentum
+% 'traingd'  - Gradicent Descent                            x
+net = fitnet(hiddenLayerSize, 'traingd');
 
 % Data division for trainig, vaidation and test sets
 net.divideParam.trainRatio = 70/100;
-net.divideParam.valRatio = 15/100;
-net.divideParam.testRatio = 15/100;
+net.divideParam.valRatio   = 15/100;
+net.divideParam.testRatio  = 15/100;
 
 % Training network
 [net,tr] = train(net, inputs, targets);
 
 % Test
-outputs = net(inputs);
-errors = gsubtract(outputs, targets);
+outputs     = net(inputs);
+errors      = gsubtract(outputs, targets);
 performance = perform(net, targets,outputs)
 
 % Visualise the network
@@ -36,7 +49,7 @@ view(net)
 %Graphics --> We use figure to display graphics in different windows
 %1
 figure(1)
-sp = plotperform(tr)
+plotperform(tr)
 %title("ERROR vs EPOCH FOR TRAINING, VALIDATION AND TEST")
 
 %2 : Display the training state from a training record returned by train

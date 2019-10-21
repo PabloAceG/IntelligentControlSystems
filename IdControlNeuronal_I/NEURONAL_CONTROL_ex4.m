@@ -14,6 +14,19 @@ clc;
 
 % Creating network
 hiddenLayerSize = 10;
+% Training functions
+% 'trainlm'  - Levenberg-Marquardt
+% 'trainbr'  - Bayesan Regularization                       x
+% 'trainbfg' - BFGSS Quasi-Newton
+% 'trainrp'  - Resilient Backpropagation                    x
+% 'trainscg' - Scaled Conjugate Gradient
+% 'traincgb' - Conjugate Gradient with Poell/Beale Restats  
+% 'traincgf' - Fletcher-Powell Conjugate Gradient
+% 'traincgp' - Polak-Ribiére Conjugate Gradient
+% 'trainoss' - One Step Secant                              x
+% 'traingdx' - Variable Learning Rate Gradient Descent
+% 'traingdm' - Gradient Descent with Momentum
+% 'traingd'  - Gradicent Descent                            x
 net = fitnet(hiddenLayerSize);
 
 % Data division for trainig, vaidation and test sets
