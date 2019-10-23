@@ -26,7 +26,7 @@ hold on
   
 % Layer properties
 % Change number of hidden layer
-hiddenLayerSize = 4;
+hiddenLayerSize = 200;
 
 % Training function selector
 trainfun    = ["trainbr", "trainrp", "trainoss", "traingd"];

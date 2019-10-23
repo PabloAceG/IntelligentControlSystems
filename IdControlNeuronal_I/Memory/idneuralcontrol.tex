@@ -1,5 +1,7 @@
 \documentclass{article}
 
+\setcounter{secnumdepth}{0}
+
 % Allow UTF-8 input
 \usepackage[utf8]{inputenc} % allow utf-8 input
 % Use 8-bit T1 fonts
@@ -106,7 +108,7 @@ número de capas y el número de entradas).
 
 En la gráfica \hyperref[bs]{\ref{bs}} la pendiente obtenida por el perceptrón
 separa los elementos de la clase \textit{1} del resto de elementos. Pero al
-añadir el dato \texttt{\[0.0, -1-5\]} de la clase \textit{3}, el perceptrón
+añadir el dato \texttt{$\left[0.0, -1.5\right]$} de la clase \textit{3}, el perceptrón
 obtenido cambia completamente su pendiente (llegando incluso a invertirla). Con
 la nueva pendiente es incapaz de separar completamente la clase \textit{1} de la
 clase \textit{3}. Resultado a esperarse debido a que hay más clases y más
@@ -114,32 +116,67 @@ clase \textit{3}. Resultado a esperarse debido a que hay más clases y más
 
 \section{Ejercicio 2. Aproximación de funciones}
 
-En todos los casos, y con los diferentes métodos de entrenamiento, el
-incrementar el tamaño de la capa oculta implica una mayor precisión, número de
-iteraciones para completar el proceso y un pequeño incremento del tiempo de
-procesado.
+La función sobre la que se quiere experimentar es $\sin(t)$. Se desea comprobar
+si el modificar el número de neuronas de la capa ocula o cambiar el método de
+entrenamiento posee algún efecto sobre un conjunto de datos.
 
-En cuanto a las funciones de entrenamiento, se han empleado:
+En primera instancia, se ejecuta el \textit{script} con el método de
+entrenamiento \textit{trainrp}, modificando el número de neuronas de la capa
+oculta. Para las pruebas, se han empleado valores desde 3 hasta 5.
 
-\begin{description}
-\item [trainbr] Bayesan Regularization
-\item [trainrp] Resilient Backpropagation
-\item [trainoss] One Step Secant
-\item [traingd] Gradient Descent
-\end{description}
-
-\begin{figure}[h]
+\begin{figure}[H]
  \centering
- \includegraphics[width=0.8\textwidth]{../I_ex2/training_functions.jpg}
- \caption{Funciones de entrenamiento empleadas.} 
- \label{tf}
+ \begin{subfigure}{0.3\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex2_trainbr_3.jpg}
+  \caption{\textit{trainbr}. Número neuronas de la capa oculta = 3.}
+ \end{subfigure}
+ \begin{subfigure}{0.3\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex2_trainbr_4.jpg}
+  \caption{\textit{trainbr}. Número neuronas de la capa oculta = 4.}
+ \end{subfigure}
+ \begin{subfigure}{0.3\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex2_trainbr_5.jpg}
+  \caption{\textit{trainbr}. Número neuronas de la capa oculta = 5.}
+ \end{subfigure}
 \end{figure}
 
-Cambiar la función de entrenamiento puede dar resultados completamente
-diferentes. Como se observa en \hyperref[tf]{\ref{tf}} emplear diferentes
-funciones puede afectar al tiempo de entrenamiento; al número de iteraciones
-(siendo en este caso \textit{traingd} la más costosa); y a la precisión de los
-valores obtenidos (siendo \textit{trainbr} la más precisa).
+Se comprobará en la figura \hyperref[f200]{\ref{f200}} como puede afectar el
+número de neuronas de la capa oculta conforme aumenta su tamaño.
+
+Además de modificar el número de neuronas de la capa oculta también se ha
+modificado el método de entrenamiento, empleándose los siguientes:
+
+\begin{description}
+ \item [trainbr] Bayesan Regularization
+ \item [trainrp] Resilient Backpropagation
+ \item [trainoss] One Step Secant
+ \item [traingd] Gradient Descent
+\end{description}
+
+El resultado se puede observar en las siguientes gráficas
+(\hyperref[f4]{\ref{f4}} y \hyperref[f200]{\ref{f200}}).
+
+\begin{figure}
+ \centering
+ \begin{subfigure}{0.45\textwidth}
+  \includegraphics[width=0.9\linewidth]{../images/I_ex2_training_functions.jpg}
+  \caption{Todas las funciones. Número de neuronas de la capa oculta = 4.}
+  \label{f4}
+ \end{subfigure}
+ \begin{subfigure}{0.45\textwidth}
+  \includegraphics[width=0.9\linewidth]{../images/I_ex2_training_functions_200.jpg}
+  \caption{Todas las funciones. Número de neuronas de la capa oculta = 200.}
+  \label{f200}
+ \end{subfigure}
+\end{figure}
+
+El modificar el número de neuronas de la capa oculta puede acabar en una red
+neuronal que esté demasiado adaptada al problema, y que por lo tanto no tenga un
+buen rendimiento al comprobar nuevos datos.
+
+Además, el cambiar el método de entrenamiento supone el tener aproximaciones
+diferentes. El elegir un método u otro siempre dependerá de la función original
+o del conjunto de datos con los que se desea entrenar la red neuronal.
 
 \section{Ejercicio 3. Aproximación de funciones (II)}
 
