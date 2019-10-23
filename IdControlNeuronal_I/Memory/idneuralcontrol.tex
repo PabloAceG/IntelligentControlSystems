@@ -1,5 +1,20 @@
 \documentclass{article}
 
+% Allow UTF-8 input
+\usepackage[utf8]{inputenc} % allow utf-8 input
+% Use 8-bit T1 fonts
+\usepackage[T1]{fontenc}    
+
+% Margins
+\usepackage{geometry}
+ \geometry{
+  a4paper,
+  left=25mm,
+  top=25mm,
+  right=25mm,
+  left=25mm
+ }
+ 
 % Images
 \usepackage{float}
 \usepackage{graphicx}
@@ -71,17 +86,31 @@ solo hay 2 clases dentro del conjunto de datos. Por este mismo motivo, este tipo
 de red neuronal no es perfectamente funcional cuando hay diferentes clases (en
 este caso 4).
 
+Debido a que no se ha definido con anterioridad a la creación de la red
+neuronal, el número de neuronas de la capa de salida es una (al igual que el
+número de capas y el número de entradas).
+
 \begin{figure}[H]
  \centering
  \begin{subfigure}{0.45\textwidth}
   \includegraphics[width=0.9\linewidth]{../images/I_ex1_basicData.jpg}
   \caption{Datos Originales}
+  \label{bs}
  \end{subfigure}
  \begin{subfigure}{0.45\textwidth}
   \includegraphics[width=0.9\linewidth]{../images/I_ex1_extendedData.jpg}
   \caption{Datos Extendidos}
+  \label{ed}
  \end{subfigure}
 \end{figure}
+
+En la gráfica \hyperref[bs]{\ref{bs}} la pendiente obtenida por el perceptrón
+separa los elementos de la clase \textit{1} del resto de elementos. Pero al
+añadir el dato \texttt{\[0.0, -1-5\]} de la clase \textit{3}, el perceptrón
+obtenido cambia completamente su pendiente (llegando incluso a invertirla). Con
+la nueva pendiente es incapaz de separar completamente la clase \textit{1} de la
+clase \textit{3}. Resultado a esperarse debido a que hay más clases y más
+\textit{clusters} de los que puede separar un perceptrón\footnote{Xor Problem.}.
 
 \section{Ejercicio 2. Aproximación de funciones}
 
@@ -111,5 +140,205 @@ diferentes. Como se observa en \hyperref[tf]{\ref{tf}} emplear diferentes
 funciones puede afectar al tiempo de entrenamiento; al número de iteraciones
 (siendo en este caso \textit{traingd} la más costosa); y a la precisión de los
 valores obtenidos (siendo \textit{trainbr} la más precisa).
+
+\section{Ejercicio 3. Aproximación de funciones (II)}
+
+Tras la ejecución del algoritmo proporcionado y aplicarlo a
+\textit{bodfat\textunderscore dataset} se obtienen las siguientes gráficas: 
+
+
+\begin{figure}[H]
+ \centering
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_performance_bodyfat_dataset.jpg}
+  \caption{Rendimiento}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_trainingstate_bodyfat_dataset.jpg}
+  \caption{Estado de Entrenamiento}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_errorhistogram_bodyfat_dataset.jpg}
+  \caption{Histograma de Errores}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_regression_bodyfat_dataset.jpg}
+  \caption{Regresión}
+ \end{subfigure}
+\end{figure}
+
+Los resultados demuestran que el entrenamiento de la red neuronal aumenta en
+precisión conforme avanzan las épocas (\textit{epoch}); la validación encuentra
+su error mínimo durante el periodo 9, momento a partir del cual solo aumenta; en
+el testing, el error aumenta tras durante el testeo, llegado a alcanzar más de 
+$10^2$ (un valor demasiado alto).
+
+Para solucionar este problema, se puede probar una distribución de los datos
+diferente. En este caso se ha escogido 60/20/20 como valores para el
+entrenamiento (\textit{train}), la validación (\textit{validation}) y el testeo
+(\textit{test}), respectivamente, de manera arbitraria.
+
+\begin{figure}[H]
+ \centering
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_performance_bodyfat_dataset_div60-20-20.jpg}
+  \caption{Rendimiento}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_trainingstate_bodyfat_dataset_div60-20-20.jpg}
+  \caption{Estado de Entrenamiento}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_errorhistogram_bodyfat_dataset_div60-20-20.jpg}
+  \caption{Histograma de Errores}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_regression_bodyfat_dataset_div60-20-20.jpg}
+  \caption{Regresión}
+ \end{subfigure}
+\end{figure}
+
+Tras la nueva división de los datos, empleando el mismo algoritmo de
+entrenamiento, se consigue que los errores (teste, validación y entrenamiento)
+disminuyen, aunque la valicación y el test siguen teniendo una cierta
+predisposición a incrementar levemente superada la cuarta época. 
+
+La función lineal mostrada en la regresión pasa a ser de $Output ~= 0.78*Target
++ 3.9$ a valer $Output ~= 0.84*Target + 2.3$. Siendo, aparentemente, la segunda
+una ecuación más fiel a los datos representados.
+
+Para realizar un estudio más exhaustivo, se han empleado diferentes métodos de
+entrenamiento.
+
+\begin{description}
+\item [trainbr] Bayesan Regularization
+\item [trainrp] Resilient Backpropagation
+\item [trainoss] One Step Secant
+\item [traingd] Gradient Descent
+\end{description}
+
+A continuación se especificará y comparará cada uno de los grupos de gráficas
+obtenidos a lo largo de la ejecución del \textit{script}
+
+Referente al rendimiento, la función bayesiana ha conseguido los mejores
+resultados, consigue el mejor rendimiento de entre las cuatro gráficas. Por otro
+lado, la función \textit{trainrp} consigue un rendimiento que empeora conforme
+se supera la época 16. \textit{trainoss}, con un rendimiento entre las dos
+anteriores, posee un MSE muy similar entre los conjuntos de datos
+\textit{train}, \textit{validation} y \textit{test}. Por último, el método de
+entrenamiento del gradicente, consigue el peor resultado, empeorando conforme
+recibe más entrenamiento.
+
+\begin{figure}[H]
+ \centering
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_performance_bodyfat_dataset_trainbr.jpg}
+  \caption{Rendimiento \textit{trainbr}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_performance_bodyfat_dataset_trainrp.jpg}
+  \caption{Rendimiento \textit{trainrp}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_performance_bodyfat_dataset_trainoss.jpg}
+  \caption{Rendimiento \textit{trainoss}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_performance_bodyfat_dataset_traingd.jpg}
+  \caption{Rendimiento \textit{traingd}}
+ \end{subfigure}
+\end{figure}
+
+El valor del gradiente \footnote{El valor del gradiente por propagación inversa
+se encuentra en escala logarítmica. El valor en la parte superior de la gráfica
+es el valor para el cual se ha alcanzado el punto mínimo de un mínimo local.} se 
+muestra una vez más incremental para \textit{traingd}\footnote{MATLAB detiene el 
+entrenamiento del modelo cuando el valor de MSE - Mean Square Error - resulta 
+incremental 6 veces de manera consecutiva, también conocido como 
+\textit{validation fails}.} En el caso de \textit{trainbr}, el gradiente se 
+mantiene constante a partir de cierto punto, lo que hace que el entrenamiento 
+dure 1000 \textit{epochs}; esto se debe a la manera en la que está codificado el
+algoritmo, la parada por valiación se encuentra desactivada por defecto. El 
+entrenamiento de \textit{trainrp} y \textit{trainoss} discurre de manera normal, 
+alcanzando los mínimos locales en los valores 11.2225 y 39.6971, respectivamente.
+
+\begin{figure}[H]
+\centering
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_trainingstate_bodyfat_dataset_trainbr.jpg}
+  \caption{Estado de Entrenamiento \textit{trainbr}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_trainingstate_bodyfat_dataset_trainrp.jpg}
+  \caption{Estado de Entrenamiento \textit{trainrp}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_trainingstate_bodyfat_dataset_trainoss.jpg}
+  \caption{Estado de Entrenamiento \textit{trainoss}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_trainingstate_bodyfat_dataset_traingd.jpg}
+  \caption{Estado de Entrenamiento \textit{traingd}}
+ \end{subfigure}
+\end{figure}
+
+El histograma es una gráfica que representa el error cometido al estimar los
+valores empleados para el entrenamiento de la red neuronal, por tanto, cuanto
+más esté centrada la distribución de lo errores de manera cercana al indicador
+\textit{Zero Error}, mejor predicción dará el modelo. Atendiendo a este
+criterio, los extremos de \textit{trainrp} están prácticamente libres, y los
+valores cercanos a $Error = 0$ están más poblados. Por esto mismo, se sabe que
+la función del gradiente es la que ha obtenido peores resultados, por tener su
+mayor concentración de errores más cercana a 1 que a 0. \textit{trainoss} tiene,
+con alguna excepción, forma de pirámide escalonada, lo que también sugiere un
+entrenamiento exitoso. \textit{trainbr} posee una forma bastante irregular, pero
+los errores que más se repiten se encuentran principalmente en la zona central,
+sugiriendo un resultado mejor que el resto de algoritmos de entrenamiento.
+
+\begin{figure}[H]
+ \centering
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_errorhistogram_bodyfat_dataset_trainbr.jpg}
+  \caption{Histograma de Errores \textit{trainbr}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_errorhistogram_bodyfat_dataset_trainrp.jpg}
+  \caption{Histograma de Errores \textit{trainrp}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_errorhistogram_bodyfat_dataset_trainoss.jpg}
+  \caption{Histograma de Errores \textit{trainoss}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_errorhistogram_bodyfat_dataset_traingd.jpg}
+  \caption{Histograma de Errores \textit{traingd}}
+ \end{subfigure}
+\end{figure}
+ 
+En la parte superior de cada gráfica aparece un valor, \textit{R}, el cual
+indica lo óptima que es la regresión, siendo 1 el valor más óptimo. No hace
+falta observar mucho los resultados obtenidos para percatarse de que el método
+de entrenamiento más óptimo es en realidad la regularización bayesiana, tal y
+como se venía adelantando a lo largo del ejercicio. 
+
+\begin{figure}[H]
+ \centering
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_regression_bodyfat_dataset_trainbr.jpg}
+  \caption{Regresión \textit{trainbr}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_regression_bodyfat_dataset_trainrp.jpg}
+  \caption{Regresión \textit{trainrp}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_regression_bodyfat_dataset_trainoss.jpg}
+  \caption{Regresión \textit{trainoss}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex3_regression_bodyfat_dataset_traingd.jpg}
+  \caption{Regresión \textit{traingd}}
+ \end{subfigure}
+\end{figure}
 
 \end{document}

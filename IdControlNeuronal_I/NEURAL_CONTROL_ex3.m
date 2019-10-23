@@ -28,12 +28,12 @@ hiddenLayerSize = 10;
 % 'traingdx' - Variable Learning Rate Gradient Descent
 % 'traingdm' - Gradient Descent with Momentum
 % 'traingd'  - Gradicent Descent                            x
-net = fitnet(hiddenLayerSize, 'traingd');
+net = fitnet(hiddenLayerSize, 'trainbr');
 
 % Data division for trainig, vaidation and test sets
-net.divideParam.trainRatio = 70/100;
-net.divideParam.valRatio   = 15/100;
-net.divideParam.testRatio  = 15/100;
+net.divideParam.trainRatio = 60/100;
+net.divideParam.valRatio   = 20/100;
+net.divideParam.testRatio  = 20/100;
 
 % Training network
 [net,tr] = train(net, inputs, targets);
