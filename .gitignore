@@ -21,7 +21,7 @@ octave-workspace
 # Simulink autosave extension
 .autosave
 
-## Core latex/pdflatex auxiliary files:
+# Core latex/pdflatex auxiliary files:
 *.aux
 *.lof
 *.log
