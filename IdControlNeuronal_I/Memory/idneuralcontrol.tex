@@ -183,7 +183,6 @@ o del conjunto de datos con los que se desea entrenar la red neuronal.
 Tras la ejecución del algoritmo proporcionado y aplicarlo a
 \textit{bodfat\textunderscore dataset} se obtienen las siguientes gráficas: 
 
-
 \begin{figure}[H]
  \centering
  \begin{subfigure}{0.4\textwidth}
@@ -377,5 +376,88 @@ como se venía adelantando a lo largo del ejercicio.
   \caption{Regresión \textit{traingd}}
  \end{subfigure}
 \end{figure}
+
+\section{Ejercicio 4. Clasificación}
+
+Tras la ejecución del \textit{script} adaptado para los datos de
+\textit{cancer\textunderscore dataset} se obtienen las siguientes gráficas.
+
+\begin{figure}[H]
+ \centering
+ \begin{subfigure}{0.45\textwidth}
+  \includegraphics[width=0.9\linewidth]{../images/I_ex4_confusion_cancer_dataset.jpg}
+  \caption{Matriz de confusión}
+  \label{conf}
+ \end{subfigure}
+ \begin{subfigure}{0.45\textwidth}
+  \includegraphics[width=0.9\linewidth]{../images/I_ex4_roc_cancer_dataset.jpg}
+  \caption{\textit{Receiver Operating Characteristic}}
+  \label{roc}
+ \end{subfigure}
+\end{figure}
+
+En \hyperref[conf]{\ref{conf}}, las filas indican el valor que se ha predicho;
+lsa columnas indican el valor real. Por tanto, la diagonal corresponde a los
+valores que han sido predecidos de manera correcta. Interpretando el resultado
+obtenido, se sabe que el 97\% de las estimaciones han sido correctas.
+
+En la segunda gráfica (\hyperref[roc]{\ref{roc}}), es una métrica empleada para
+comprobar la calidad de los clasificadores. Cuanto más se acerquen las funciones
+a 1 en el eje de ordenadas. Por este mismo motivo, se conoce que los
+clasificadores empleados para este set de datos son una buena opción.
+
+Para realizar un estudio más acertado de estas herramientas, se han empleado
+diferentes métods de entrenamiento (los mismos empleados para los ejercicios 2 y
+3 de este mismo apartado).
+
+\begin{figure}[H]
+ \centering
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex4_confusion_cancer_dataset_trainbr.jpg}
+  \caption{Matriz de confusión \textit{trainbr}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex4_confusion_cancer_dataset_traingd.jpg}
+  \caption{Matriz de confusión \textit{trainrp}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex4_confusion_cancer_dataset_trainoss.jpg}
+  \caption{Matriz de confusión \textit{trainoss}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex4_confusion_cancer_dataset_trainrp.jpg}  
+  \caption{Matriz de confusión \textit{traingd}}
+ \end{subfigure}
+\end{figure}
+
+De entre todos los resultados obtenidos, el más acertado ha sido el de el
+algoritmo de entrenamiento \textit{trainbr}, con un 99.6\% de acierto sobre el
+set. El peor algoritmo que se podría emplear sobre este set es \textit{trainrp},
+que a pesar de poseer el peor resultado tiene un 92.4\% de acierto.
+
+\begin{figure}[H]
+ \centering
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex4_roc_cancer_dataset_trainbr.jpg}
+  \caption{ROC \textit{trainbr}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex4_roc_cancer_dataset_traingd.jpg}
+  \caption{ROC \textit{trainrp}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex4_roc_cancer_dataset_trainoss.jpg}
+  \caption{ROC \textit{trainoss}}
+ \end{subfigure}
+ \begin{subfigure}{0.4\textwidth}
+  \includegraphics[width=0.8\linewidth]{../images/I_ex4_roc_cancer_dataset_trainrp.jpg}  
+  \caption{ROC \textit{traingd}}
+ \end{subfigure}
+\end{figure}
+
+Evaluando el resultado obtenido de entre las representaciones de \textit{ROC} se
+corrobora que el mejor método de entrenamiento pertenece a \textit{trainbr}, y
+el peor a \textit{trainrp}; debido a la proximidad/distancia de los valores de
+\textit{True Positive Rate} para \textit{False Positive Rate} entre 0 y 0.2.
 
 \end{document}
