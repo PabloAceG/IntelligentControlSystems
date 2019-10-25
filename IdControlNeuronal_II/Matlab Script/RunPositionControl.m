@@ -4,12 +4,17 @@
 % variables refx, refy and the samplig time.
 
 % Sampling time
-Ts = 100e-3
+ask_Ts = 'Elija un tiempo de muestreo: ';
+Ts = input(ask_Ts);
+Ts = Ts * 10.^-3;
+
+%Ts = 100e-3
 
 %X-Y reference the position
-refx = 2.0;
-refy = 2.0;
-
+ask_x = 'Referencia de posicion para X:'
+refx = input(ask_x);
+ask_y = 'Referencia de posicion para Y:'
+refy = input(ask_y);
 % -------------------------------------------------------------------------
 
 % c) Execute the script RunPosition and check that variables that contains 
@@ -17,18 +22,19 @@ refy = 2.0;
 %outputs for the robot during the simulation
 % Simulation execution
 sim('PositionControl.slx')
-
 % -------------------------------------------------------------------------
 
 % d) Execute the following code in order to display the trajectory of the 
 % robot using the plot's comand
 
 %Display
-x = out.salida_x.signals.values;
-y = out.salida_y.signals.values;
+x = salida_x.signals.values;
+y = salida_y.signals.values;
 figure;
 plot(x,y);
 grid on;
 hold on;
+
+
 
 
