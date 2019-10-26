@@ -34,4 +34,4 @@ end
 
 % Group by inputs and output the arrays obtained before
 inputs = [E_d_vec';E_theta_vec'];
-outputs = [W_vec';W_vec'];
+targets = [W_vec';W_vec'];

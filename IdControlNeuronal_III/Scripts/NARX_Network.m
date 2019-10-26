@@ -12,7 +12,7 @@ output_retard = 2;
 % NARX model definition
 net = narxnet(1:input_retard, 1:output_retard, [hiddenNeurons]);
 
-view(net)
+%view(net)
 
 % Prepare and tranform inputs and outputs into cell arrays
 
@@ -34,6 +34,6 @@ net = train(net,x,t,xi,ai);
 net = closeloop(net);
 
 
-view(net)
+%view(net)
 
-gensim(net, Ts)
+%gensim(net, Ts)

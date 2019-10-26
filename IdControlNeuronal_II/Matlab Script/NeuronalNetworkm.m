@@ -4,8 +4,8 @@
 % be discuss.
 
 sim('PositionControl.slx')
-%inputs =  [out.E_d.signals.values, out.E_theta.signals.values]
-%targets = [out.V.signals.values, out.W.signals.values]
+%inputs =  [out.E_d.signals.values: out.E_theta.signals.values]
+%targets = [out.V.signals.values: out.W.signals.values]
 
 hiddenNeurons = 1;
 net = feedforwardnet([hiddenNeurons]);
