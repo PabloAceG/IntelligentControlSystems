@@ -15,11 +15,14 @@
 # Simulink Code Generation
 slprj/
 
+# Simulink Cache
+*.slxc
+
 # Session info
 octave-workspace
 
 # Simulink autosave extension
-.autosave
+*.autosave
 
 # Core latex/pdflatex auxiliary files:
 *.aux
