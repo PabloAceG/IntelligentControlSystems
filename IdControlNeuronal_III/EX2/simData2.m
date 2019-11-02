@@ -5,7 +5,7 @@ x_0 = 0;
 y_0 = 0;
 th_0 = 0;
 
-sim('model_ex2.slx');
+sim('model_ex2_FUNCIONA_BIEN.slx');
 % Sampling time
 ask_Ts = 'Elija un tiempo de muestreo: ';
 Ts = input(ask_Ts);
@@ -26,7 +26,7 @@ th_0 = input(ask_th);
 % inputs and outputs for the controles had been generated, and also the 
 %outputs for the robot during the simulation
 % Simulation execution
-sim('model_ex2.slx')
+sim('model_ex2_FUNCIONA_BIEN.slx')
 % -------------------------------------------------------------------------
 
 % d) Execute the following code in order to display the trajectory of the 
