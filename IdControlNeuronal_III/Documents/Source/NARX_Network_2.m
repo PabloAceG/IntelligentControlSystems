@@ -1,6 +1,6 @@
 
 % Init variables
-hiddenNeurons = 4;
+hiddenNeurons = 5;
 input_retard = 2;
 output_retard = 2;
 

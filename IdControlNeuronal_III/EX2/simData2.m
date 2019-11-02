@@ -1,11 +1,6 @@
 % Creating simulation's data second ex, part three
 
-Ts = 0.1;
-x_0 = 0;
-y_0 = 0;
-th_0 = 0;
-
-sim('model_ex2_FUNCIONA_BIEN.slx');
+%sim('model_ex2_FUNCIONA_BIEN.slx');
 % Sampling time
 ask_Ts = 'Elija un tiempo de muestreo: ';
 Ts = input(ask_Ts);
