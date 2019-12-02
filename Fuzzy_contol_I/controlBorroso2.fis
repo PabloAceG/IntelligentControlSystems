@@ -1,5 +1,5 @@
 [System]
-Name='controlBorroso'
+Name='controlBorroso2'
 Type='mamdani'
 Version=2.0
 NumInputs=2
@@ -15,31 +15,31 @@ DefuzzMethod='centroid'
 Name='E_d'
 Range=[0 10]
 NumMFs=3
-MF1='PEQUEÑA':'trimf',[0 0 5]
+MF1='PEQUEÑA':'trimf',[0 0 4.4047619047619]
 MF2='MEDIA':'trimf',[0 5 10]
-MF3='GRANDE':'trimf',[5 10 10]
+MF3='GRANDE':'trimf',[5.51587301587302 10 10]
 
 [Input2]
 Name='E_theta'
 Range=[-3.14159265358979 3.14159265358979]
 NumMFs=2
-MF1='NEGATIVO':'trimf',[-3.14 -3.14 0]
-MF2='POSITIVO':'trimf',[0 3.14 3.14]
+MF1='NEGATIVO':'trimf',[-3.14 -3.14 -0.340798941798942]
+MF2='POSITIVO':'trimf',[0.274301587301587 3.14 3.14]
 
 [Output1]
 Name='V'
 Range=[0 2]
 NumMFs=3
-MF1='grande':'trimf',[1 2 2]
+MF1='grande':'trimf',[1.52116402116402 2 2]
 MF2='mediana':'trimf',[0 1 2]
-MF3='pequeña':'trimf',[0 0 1]
+MF3='pequeña':'trimf',[0 0 0.314814814814815]
 
 [Output2]
 Name='W'
 Range=[-1 1]
 NumMFs=2
-MF1='negativo':'trimf',[-1 -1 0]
-MF2='positivo':'trimf',[0 1 1]
+MF1='negativo':'trimf',[-1 -1 -0.108465608465608]
+MF2='positivo':'trimf',[0.156084656084656 1 1]
 
 [Rules]
 1 0, 3 0 (1) : 1

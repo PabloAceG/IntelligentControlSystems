@@ -16,10 +16,10 @@ clc;
 %Tiempo de muestreo
 Ts=100e-3
 % Referencia x-y de posicion
-x_0 = 0;
-y_0 = 0;
+x_0 = 5;
+y_0 = 5;
 th_0 = 0;
-for c = 1:10
+for c = 1:3
     refx=10*rand-5;
     refy=10*rand-5;
     % Ejecutar Simulacion
@@ -27,8 +27,11 @@ for c = 1:10
     % Mostrar
     x=salida_x.signals.values;
     y=salida_y.signals.values;
-    figure;
+    v = V.signals.values;
+    w = W.signals.values;
+    %figure;
     plot(x,y);
+    %plot(v,w);
     grid on;
     hold on;
 end
