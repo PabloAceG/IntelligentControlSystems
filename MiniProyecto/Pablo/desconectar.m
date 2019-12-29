@@ -1,0 +1,3 @@
+function [] = desconectar()
+    rosshutdown;
+end
