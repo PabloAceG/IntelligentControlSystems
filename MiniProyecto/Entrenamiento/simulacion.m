@@ -1,0 +1,16 @@
+desconectar;
+
+conectar('192.168.1.47', '192.168.1.54');
+
+[pub, msg,                   ...
+ r,   initpos,               ...
+ odom,                       ...
+ laser,                      ...
+ son_0, son_1, son_2, son_3, ...
+ son_4, son_5, son_6, son_7] = ini_simulador();
+
+avanzar(pub, msg, r, initpos, odom, son_0, son_1);
+
+girar(odom, 0);
+
+desconectar;
