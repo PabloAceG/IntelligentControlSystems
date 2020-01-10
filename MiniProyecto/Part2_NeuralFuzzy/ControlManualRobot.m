@@ -1,18 +1,21 @@
 
 clear all;
 close all;
+
 rosshutdown
+
 global vel_angular;
 global vel_lineal;
 global incAngular;
 global incLineal;
 global vel_angular_max;
 global vel_lineal_max;
-global stop
-ROS_MASTER_IP = '172.20.3.28'
-ROS_IP = '172.20.1.173'
+global stop;
 
-rosinit(['http://',ROS_MASTER_IP,':11311'],'NodeHost',ROS_IP)
+ROS_MASTER_IP = '192.168.1.47'
+ROS_IP        = '192.168.1.47'
+
+rosinit(['http://', ROS_MASTER_IP, ':11311'], 'NodeHost', ROS_IP)
 
 %DECLARACION DE PUBLISHERS
 %Velocidad
