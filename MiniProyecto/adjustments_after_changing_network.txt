@@ -1,0 +1,19 @@
+Virtual Machine:
+
+- Change map:
+~/robotica_movil_ws/src/stdr_simulator-indigo-devel/stdr_resources/maps
+image
+
+- Change IP:
+~\.bashrc
+export ROS_MASTER_URI=http://ROS_MASTER_IP:11311
+export ROS_IP=ROS_IP
+
+MATLAB:
+- Menú APPS/Robot Operative System(ROS)
+
+- Menú Simulation/ROS Network:
+Hostname/IP Address: ROS_IP
+
+- Menú ROBOT/Connect to Robot:
+Device address: ROS_IP	
