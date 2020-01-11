@@ -1,21 +1,18 @@
 
 clear all;
 close all;
-
 rosshutdown
-
 global vel_angular;
 global vel_lineal;
 global incAngular;
 global incLineal;
 global vel_angular_max;
 global vel_lineal_max;
-global stop;
+global stop
+ROS_MASTER_IP = '192.168.1.149'
+ROS_IP = '192.168.1.99'
 
-ROS_MASTER_IP = '192.168.1.47'
-ROS_IP        = '192.168.1.47'
-
-rosinit(['http://', ROS_MASTER_IP, ':11311'], 'NodeHost', ROS_IP)
+rosinit(['http://',ROS_MASTER_IP,':11311'],'NodeHost',ROS_IP)
 
 %DECLARACION DE PUBLISHERS
 %Velocidad
@@ -79,10 +76,7 @@ while (stop==0)
    pause(0.1);
 end
 vel_lineal =0;
-vel_angular =0;
 msg_vel.Linear.X = vel_lineal;
 msg_vel.Angular.Z = vel_angular;
 send(pub_vel,msg_vel);
 save datos_entrenamiento training
-
-
