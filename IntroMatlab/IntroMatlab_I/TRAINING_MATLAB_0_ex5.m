@@ -11,10 +11,9 @@ clc;
 % EXERCISE 5: 3D GRAPHICAL REPRESENTATION
 
 % AREA:
-% -5 <= x
-% y <= 5
-x = -5 : 1 : 100;
-y =  5 : 1 : 100;
+% -5 <= x, y <= 5
+x = -5 : 1 : 5;
+y = -5 : 1 : 5;
 
 [X, Y] = meshgrid(x, y);
 
