@@ -32,22 +32,16 @@ Y = {2 2 2 0 0 3 3 3 1 1  ...
 % exercise.
 
 % Neural Network used
-net = configure(perceptron, X, Y);
-% Sets no bias for the network
-net.biasConnect = 0;
-% Weights initialization
-net.IW{1, 1} = [1 -0.8];
+net = perceptron;
 % Goes through input vector just once
 % net.trainParam.epochs = 1
 % Network training
-net = adapt(net, X, Y)
-view(net);
-% New weights after applying all input vector
+net = train(net, X, Y)
+
 w = net.iw{1, 1} % w = [-1.1 3.8]
-% Simulation on inputs with trained network
+
 a = net(X)
 err = cell2mat(a) - cell2mat(Y)
-% Network data at the end of execution
 
 X = cell2mat(X)';
 
@@ -56,12 +50,7 @@ Y = cell2mat(Y)';
 figure(1)
 gscatter(X(:, 1), X(:, 2), Y)
 hold on
-% The function that represents the obtained perceptron is a linear
-% equation. Thefore, it can be writen as:
-% y = mx + b 
-% Where | m = slope
-%       | x = independent variable, in this case is the desired domain
-%       | b = shift, in this case the bias
+
 m = - w(1) / w(2);
 x = -5 : 1 : 5;
 y = m .* x + net.biasConnect;
