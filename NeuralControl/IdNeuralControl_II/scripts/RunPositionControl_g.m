@@ -16,6 +16,5 @@ net = feedforwardnet( [ 50 ] );
 net = configure(net, inputs, outputs);
 net = train(net, inputs, outputs);
 
-
 % Generar bloque de Simulink con el controlador neuronal
 gensim(net, Ts)
