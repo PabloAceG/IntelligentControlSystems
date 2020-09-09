@@ -15,7 +15,7 @@ DefuzzMethod='centroid'
 Name='sonar_0'
 Range=[0.1 5]
 NumMFs=3
-MF1='cerc':'trimf',[-1.942 0.1 2.142]
+MF1='cerc':'trimf',[0.1 0.1 1.25]
 MF2='med':'trimf',[0.5083 2.55 4.592]
 MF3='lej':'trimf',[2.958 5 7.042]
 
@@ -23,7 +23,7 @@ MF3='lej':'trimf',[2.958 5 7.042]
 Name='sonar_2'
 Range=[0.1 5]
 NumMFs=3
-MF1='cerc':'trimf',[-1.942 0.1 2.142]
+MF1='cerc':'trimf',[0.1 0.1 2]
 MF2='med':'trimf',[0.5083 2.55 4.592]
 MF3='lej':'trimf',[2.958 5 7.042]
 
@@ -31,7 +31,7 @@ MF3='lej':'trimf',[2.958 5 7.042]
 Name='V'
 Range=[0 1]
 NumMFs=3
-MF1='lent':'trimf',[-0.416666666666667 0 0.416666666666667]
+MF1='lent':'trimf',[0 0 0.4]
 MF2='med':'trimf',[0.0833333333333333 0.5 0.916666666666667]
 MF3='rap':'trimf',[0.583333333333333 1 1.41666666666667]
 
@@ -39,7 +39,7 @@ MF3='rap':'trimf',[0.583333333333333 1 1.41666666666667]
 Name='W'
 Range=[-1 1]
 NumMFs=3
-MF1='neg':'trimf',[-1.833 -1 -0.1667]
+MF1='neg':'trimf',[-1 -1 -0.15]
 MF2='cero':'trimf',[-0.8333 0 0.8333]
 MF3='pos':'trimf',[0.1667 1 1.833]
 

@@ -1,7 +1,9 @@
 
 clear all;
 close all;
+
 rosshutdown
+
 global vel_angular;
 global vel_lineal;
 global incAngular;
@@ -9,8 +11,9 @@ global incLineal;
 global vel_angular_max;
 global vel_lineal_max;
 global stop
-ROS_MASTER_IP = '192.168.1.54'
-ROS_IP = '192.168.1.116'
+
+ROS_MASTER_IP = '192.168.1.70'
+ROS_IP        = '192.168.1.66'
 
 rosinit(['http://',ROS_MASTER_IP,':11311'],'NodeHost',ROS_IP)
 
@@ -54,29 +57,35 @@ fig = figure('KeyPressFcn',@Key_Down);
   training=[];
 
 stop = 0;
-while (stop==0)
-    pos=odom.LatestMessage.Pose.Pose.Position;
-    x=pos.X;
-    y=pos.Y;
-    ori=odom.LatestMessage.Pose.Pose.Orientation;    
-    theta=quat2eul([ori.W ori.X ori.Y ori.Z]);
-    theta=theta(1);       
-    s0= sonar_0.LatestMessage.Range_;
-    s1= sonar_1.LatestMessage.Range_;
-    s2= sonar_2.LatestMessage.Range_;
-    s3= sonar_3.LatestMessage.Range_;
-    s4= sonar_4.LatestMessage.Range_;
-    s5= sonar_5.LatestMessage.Range_;
-    s6= sonar_6.LatestMessage.Range_;
-    s7= sonar_7.LatestMessage.Range_;
-   training=[training;[s0,s1,s2,s3,s4,s5,s6,s7,x,y,theta,vel_angular,vel_lineal]];
-   msg_vel.Linear.X = vel_lineal;
+while (stop == 0)
+    pos = odom.LatestMessage.Pose.Pose.Position;
+    x   = pos.X;
+    y   = pos.Y;
+    
+    ori   = odom.LatestMessage.Pose.Pose.Orientation;    
+    theta = quat2eul([ori.W ori.X ori.Y ori.Z]);
+    theta = theta(1);       
+    
+    s0 = sonar_0.LatestMessage.Range_;
+    s1 = sonar_1.LatestMessage.Range_;
+    s2 = sonar_2.LatestMessage.Range_;
+    s3 = sonar_3.LatestMessage.Range_;
+    s4 = sonar_4.LatestMessage.Range_;
+    s5 = sonar_5.LatestMessage.Range_;
+    s6 = sonar_6.LatestMessage.Range_;
+    s7 = sonar_7.LatestMessage.Range_;
+    
+   training = [
+       training;
+       [s0, s1, s2, s3, s4, s5, s6, s7, x, y, theta, vel_angular, vel_lineal]
+   ];
+   msg_vel.Linear.X  = vel_lineal;
    msg_vel.Angular.Z = vel_angular;
-   send(pub_vel,msg_vel);
+   send(pub_vel, msg_vel);
    pause(0.1);
 end
-vel_lineal =0;
+vel_lineal = 0;
 msg_vel.Linear.X = vel_lineal;
 msg_vel.Angular.Z = vel_angular;
-send(pub_vel,msg_vel);
-save datos_entrenamiento training
+send(pub_vel, msg_vel);
+save datos_entrenamiento_con_obstaculos training
