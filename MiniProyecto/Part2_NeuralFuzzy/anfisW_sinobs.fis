@@ -1,0 +1,53 @@
+[System]
+Name='anfisW_sinobs'
+Type='sugeno'
+Version=2.0
+NumInputs=2
+NumOutputs=1
+NumRules=9
+AndMethod='prod'
+OrMethod='probor'
+ImpMethod='prod'
+AggMethod='sum'
+DefuzzMethod='wtaver'
+
+[Input1]
+Name='input1'
+Range=[0.340000003576279 1.33999991416931]
+NumMFs=3
+MF1='in1mf1':'trimf',[-0.159999951720238 0.339408290526343 0.889317524067687]
+MF2='in1mf2':'trimf',[0.337402843021288 0.836918898013711 1.34058540740587]
+MF3='in1mf3':'trimf',[0.815012222841311 1.33892314191323 1.83999986963269]
+
+[Input2]
+Name='input2'
+Range=[0.839999973773956 5]
+NumMFs=3
+MF1='in2mf1':'trimf',[-1.24000003933678 0.840818234780572 2.93191415079168]
+MF2='in2mf2':'trimf',[0.839308545448801 2.9205592592727 5.00026043238903]
+MF3='in2mf3':'trimf',[2.92210403774985 4.99973933567856 7.08000001310999]
+
+[Output1]
+Name='output'
+Range=[-0.100000001490116 0.200000002980232]
+NumMFs=9
+MF1='out1mf1':'constant',[-0.0869419455464907]
+MF2='out1mf2':'constant',[-0.0937180826003299]
+MF3='out1mf3':'constant',[-0.0478334925732691]
+MF4='out1mf4':'constant',[0.284457948752032]
+MF5='out1mf5':'constant',[0.0500055977249282]
+MF6='out1mf6':'constant',[0.0839308965786061]
+MF7='out1mf7':'constant',[51.4966209498719]
+MF8='out1mf8':'constant',[-0.022716424131446]
+MF9='out1mf9':'constant',[0.0872080010863505]
+
+[Rules]
+1 1, 1 (1) : 1
+1 2, 2 (1) : 1
+1 3, 3 (1) : 1
+2 1, 4 (1) : 1
+2 2, 5 (1) : 1
+2 3, 6 (1) : 1
+3 1, 7 (1) : 1
+3 2, 8 (1) : 1
+3 3, 9 (1) : 1
