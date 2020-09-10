@@ -1,4 +1,3 @@
-
 clear all;
 close all;
 
@@ -12,7 +11,7 @@ global vel_angular_max;
 global vel_lineal_max;
 global stop
 
-ROS_MASTER_IP = '192.168.1.70'
+ROS_MASTER_IP = '192.168.1.71'
 ROS_IP        = '192.168.1.66'
 
 rosinit(['http://',ROS_MASTER_IP,':11311'],'NodeHost',ROS_IP)
@@ -85,7 +84,7 @@ while (stop == 0)
    pause(0.1);
 end
 vel_lineal = 0;
-msg_vel.Linear.X = vel_lineal;
+msg_vel.Linear.X  = vel_lineal;
 msg_vel.Angular.Z = vel_angular;
 send(pub_vel, msg_vel);
 save datos_entrenamiento_con_obstaculos training
