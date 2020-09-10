@@ -1,2 +1,5 @@
 *.mp4 filter=lfs diff=lfs merge=lfs -text
+<<<<<<< HEAD
 *.pptx filter=lfs diff=lfs merge=lfs -text
+=======
+>>>>>>> 5879750a539d62c5bdc18e37b68f6ecd42efd04b
