@@ -14,14 +14,15 @@ close all;
 clc;
 %-------------------------------------------------------------------------%
 %Tiempo de muestreo
-Ts=100e-3
+Ts=100e-3;
 % Referencia x-y de posicion
-x_0 = 5;
-y_0 = 5;
+x_0 = 0.5;
+y_0 = 0;
 th_0 = 0;
-for c = 1:3
-    refx=10*rand-5;
-    refy=10*rand-5;
+num=5;
+for c = 1:1
+    xref=10*rand-5;
+    yref=10*rand-5;
     % Ejecutar Simulacion
     sim('PositionControl.slx')
     % Mostrar
@@ -31,7 +32,7 @@ for c = 1:3
     w = W.signals.values;
     %figure;
     plot(x,y);
-    %plot(v,w);
+    % plot(v,w);
     grid on;
     hold on;
 end
